@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+   <!--From https://codepen.io/frytyler/pen/EGdtg-->
+   <head>
+      <meta charset="UTF-8" />
+      <title>ML API</title>
+      <link
+         href="https://fonts.googleapis.com/css?family=Pacifico"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Arimo"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Hind:300"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         rel="stylesheet"
+         href="{{ url_for('static', filename='css/style.css') }}"
+      />
+   </head>
+
+   <body>
+      <div class="container">
+         <form action="{{ url_for('predict')}}" method="post" class="inputs">
+            <div class="input-fields">
+               <div>
+                  <h3><b>Fatty Liver Risk Assessment Form</b></h3>
+                  <input
+                     type="text"
+                     name="field1"
+                     placeholder="Age of the patient"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field2"
+                     placeholder="Gender of the patient"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field3"
+                     placeholder="Total Bilirubin"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field4"
+                     placeholder="Direct Bilirubin"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field5"
+                     placeholder="Â Alkphos Alkaline Phosphotase"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field6"
+                     placeholder="Â Sgpt Alamine Aminotransferase"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field7"
+                     placeholder="Sgot Aspartate Aminotransferase"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field8"
+                     placeholder="Total Protiens"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field9"
+                     placeholder="Â ALB Albumin"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field10"
+                     placeholder="A/G Ratio Albumin and Globulin Ratio"
+                     required="required"
+                  />
+                  <input
+                     type="text"
+                     name="field11"
+                     placeholder="AST/ALT"
+                     required="required"
+                  />
+               </div>
+               <div class="radio-button-container">
+                  <div>
+                     <br /><br /><br />
+                     <input
+                        type="radio"
+                        id="model1"
+                        name="selected_model"
+                        value="Model 1"
+                     />
+                     <h3><b>Logistic Regression</b></h3>
+                     <input
+                        type="radio"
+                        id="model2"
+                        name="selected_model"
+                        value="Model 2"
+                     />
+                     <h3><b>Support Vector Machine</b></h3>
+                     <input
+                        type="radio"
+                        id="model3"
+                        name="selected_model"
+                        value="Model 3"
+                     />
+                     <h3><b>Random Forest</b></h3>
+                     <input
+                        type="radio"
+                        id="model4"
+                        name="selected_model"
+                        value="Model 4"
+                     />
+                     <h3><b>Hybrid (LR + SVM + RF)</b></h3>
+                     <button
+                        type="submit"
+                        class="btn btn-primary btn-block btn-large"
+                     >
+                        Predict
+                     </button>
+                  </div>
+                  <div>
+                     <h2>RESULT : {{ prediction_text }}</h2>
+                     <h2>Accuracy : {{ Accuracy_test }}</h2>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>

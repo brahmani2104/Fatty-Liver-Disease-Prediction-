@@ -1,0 +1,41 @@
+#gradient {
+   background-image: url(./3285483.jpg);
+   background-size: 180% 180%;
+   animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+h2 {
+   margin-bottom: 50px;
+}
+
+#patientForm {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+input {
+   border-radius: 20px;
+}
+
+#hello {
+   border-radius: 10px;
+}
+
+.heading {
+   color: rgb(250, 239, 239);
+   text-align: center;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
